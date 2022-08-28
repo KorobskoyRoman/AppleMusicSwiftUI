@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct LibraryView: View {
+
     @State private var isEditing = false
+    @State private var editMode = EditMode.active
 
     var body: some View {
         NavigationView {
@@ -24,6 +26,7 @@ struct LibraryView: View {
                         })
                     }
                 }
+                .environment(\.editMode, $editMode)
         }
     }
 
