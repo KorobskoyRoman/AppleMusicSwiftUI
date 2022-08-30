@@ -13,21 +13,19 @@ struct LibraryView: View {
     @State private var editMode = EditMode.active
 
     var body: some View {
-        NavigationView {
-            mainView
-                .transition(.slide)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            isEditing.toggle()
-                        }, label: {
-                            Text(isEditing ? "Готово" : "Править")
-                                .foregroundColor(.red)
-                        })
-                    }
+        mainView
+            .transition(.slide)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isEditing.toggle()
+                    }, label: {
+                        Text(isEditing ? "Готово" : "Править")
+                            .foregroundColor(.red)
+                    })
                 }
-                .environment(\.editMode, $editMode)
-        }
+            }
+            .environment(\.editMode, $editMode)
     }
 
     private var mainView: some View {
