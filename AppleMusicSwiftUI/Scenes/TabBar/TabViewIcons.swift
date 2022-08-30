@@ -12,21 +12,30 @@ struct TabViewIcons: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             Divider()
             TabView {
-                LibraryView()
-                    .tabItem {
-                        Image(systemName: "rectangle.stack.badge.play.fill")
-                        Text("Медиатека")
-                    }
-                Text("")
-                    .tabItem {
-                        Image(systemName: "dot.radiowaves.left.and.right")
-                        Text("Радио")
-                    }
-                Text("")
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Поиск")
-                    }
+                NavigationView {
+                    LibraryView()
+                        .navigationTitle("Медиатека")
+                }
+                .tabItem {
+                    Image(systemName: "rectangle.stack.badge.play.fill")
+                    Text("Медиатека")
+                }
+                NavigationView {
+                    Text("")
+                        .navigationTitle("Радио")
+                }
+                .tabItem {
+                    Image(systemName: "dot.radiowaves.left.and.right")
+                    Text("Радио")
+                }
+                NavigationView {
+                    Text("")
+                        .navigationTitle("Поиск")
+                }
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Поиск")
+                }
             }
             .ignoresSafeArea(edges: .bottom)
             .accentColor(.red)

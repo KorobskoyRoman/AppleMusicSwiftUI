@@ -20,7 +20,6 @@ struct MainLibraryView: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }
-        .navigationTitle("Медиатека")
     }
 }
 
