@@ -14,6 +14,8 @@
 		9C4FE7C428BAE09700E8970F /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FE7C328BAE09700E8970F /* LibraryView.swift */; };
 		9C4FE7C628BAE0BB00E8970F /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FE7C528BAE0BB00E8970F /* MiniPlayerView.swift */; };
 		9C4FE7C928BAE22800E8970F /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FE7C828BAE22800E8970F /* LibraryModel.swift */; };
+		9C7381C728C0063900A98DC2 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7381C628C0063900A98DC2 /* RadioView.swift */; };
+		9C7381CA28C009F400A98DC2 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7381C928C009F400A98DC2 /* RadioModel.swift */; };
 		9CA4B8C528B8240D00B7A043 /* AppleMusicSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4B8C428B8240D00B7A043 /* AppleMusicSwiftUIApp.swift */; };
 		9CA4B8C728B8240D00B7A043 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4B8C628B8240D00B7A043 /* ContentView.swift */; };
 		9CA4B8C928B8241000B7A043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4B8C828B8241000B7A043 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		9C4FE7C328BAE09700E8970F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		9C4FE7C528BAE0BB00E8970F /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		9C4FE7C828BAE22800E8970F /* LibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
+		9C7381C628C0063900A98DC2 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		9C7381C928C009F400A98DC2 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
 		9CA4B8C128B8240D00B7A043 /* AppleMusicSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4B8C428B8240D00B7A043 /* AppleMusicSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSwiftUIApp.swift; sourceTree = "<group>"; };
 		9CA4B8C628B8240D00B7A043 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 				9C4FE7BE28BADFF900E8970F /* TabBar */,
 				9C4FE7BF28BAE00F00E8970F /* MainView */,
 				9C4FE7C228BAE08000E8970F /* Library */,
+				9C7381C528C0061600A98DC2 /* Radio */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -104,6 +109,23 @@
 			isa = PBXGroup;
 			children = (
 				9C4FE7C828BAE22800E8970F /* LibraryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C7381C528C0061600A98DC2 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				9C7381C828C009E500A98DC2 /* Model */,
+				9C7381C628C0063900A98DC2 /* RadioView.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		9C7381C828C009E500A98DC2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C7381C928C009F400A98DC2 /* RadioModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,8 +238,10 @@
 			files = (
 				9C4FE7C428BAE09700E8970F /* LibraryView.swift in Sources */,
 				9C4FE7BA28BAD32A00E8970F /* MainLibraryView.swift in Sources */,
+				9C7381CA28C009F400A98DC2 /* RadioModel.swift in Sources */,
 				9CA4B8C728B8240D00B7A043 /* ContentView.swift in Sources */,
 				9C4FE7B828BACED500E8970F /* Color+.swift in Sources */,
+				9C7381C728C0063900A98DC2 /* RadioView.swift in Sources */,
 				9C4FE7C628BAE0BB00E8970F /* MiniPlayerView.swift in Sources */,
 				9C4FE7B628BABE4000E8970F /* LibraryListView.swift in Sources */,
 				9CA4B8C528B8240D00B7A043 /* AppleMusicSwiftUIApp.swift in Sources */,
