@@ -16,7 +16,7 @@ struct RadioModel: Hashable {
 }
 
 final class CreateRadioModel {
-    static func createModel() -> [RadioModel] {
+    static func createRadioModel() -> [RadioModel] {
         return [
             RadioModel(image: "1", title: "Избранная радиостанция", name: "Хиты на русском", description: "Станция Apple Music"),
             RadioModel(image: "2", title: "Избранная радиостанция", name: "Чилаут", description: "Станция Apple Music"),
@@ -25,6 +25,14 @@ final class CreateRadioModel {
             RadioModel(image: "5", title: "Избранная радиостанция", name: "Хип-хоп на русском", description: "Станция Apple Music"),
             RadioModel(image: "6", title: "Избранная радиостанция", name: "Хиты", description: "Станция Apple Music"),
             RadioModel(image: "7", title: "Избранная радиостанция", name: "Хип-хоп", description: "Станция Apple Music"),
+        ]
+    }
+
+    static func createRadioStations() -> [RadioStations] {
+        return [
+            RadioStations(image: "6", title: "Хиты", description: "Станция Apple Music"),
+            RadioStations(image: "2", title: "Чилаут", description: "Станция Apple Music"),
+            RadioStations(image: "7", title: "Хип-хоп", description: "Станция Apple Music")
         ]
     }
 }

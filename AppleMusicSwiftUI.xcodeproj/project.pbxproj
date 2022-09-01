@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C047A3928C10B9B0047F514 /* RadioStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047A3828C10B9B0047F514 /* RadioStations.swift */; };
+		9C047A3B28C128570047F514 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047A3A28C128570047F514 /* StationView.swift */; };
+		9C047A3D28C128C90047F514 /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047A3C28C128C90047F514 /* GenresView.swift */; };
 		9C4FE7B628BABE4000E8970F /* LibraryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FE7B528BABE3F00E8970F /* LibraryListView.swift */; };
 		9C4FE7B828BACED500E8970F /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FE7B728BACED500E8970F /* Color+.swift */; };
 		9C4FE7BA28BAD32A00E8970F /* MainLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FE7B928BAD32A00E8970F /* MainLibraryView.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C047A3828C10B9B0047F514 /* RadioStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStations.swift; sourceTree = "<group>"; };
+		9C047A3A28C128570047F514 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
+		9C047A3C28C128C90047F514 /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
 		9C4FE7B528BABE3F00E8970F /* LibraryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListView.swift; sourceTree = "<group>"; };
 		9C4FE7B728BACED500E8970F /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		9C4FE7B928BAD32A00E8970F /* MainLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLibraryView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 			children = (
 				9C7381C828C009E500A98DC2 /* Model */,
 				9C7381C628C0063900A98DC2 /* RadioView.swift */,
+				9C047A3C28C128C90047F514 /* GenresView.swift */,
+				9C047A3A28C128570047F514 /* StationView.swift */,
 			);
 			path = Radio;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7381C928C009F400A98DC2 /* RadioModel.swift */,
+				9C047A3828C10B9B0047F514 /* RadioStations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			files = (
 				9C4FE7C428BAE09700E8970F /* LibraryView.swift in Sources */,
 				9C4FE7BA28BAD32A00E8970F /* MainLibraryView.swift in Sources */,
+				9C047A3928C10B9B0047F514 /* RadioStations.swift in Sources */,
 				9C7381CA28C009F400A98DC2 /* RadioModel.swift in Sources */,
 				9CA4B8C728B8240D00B7A043 /* ContentView.swift in Sources */,
 				9C4FE7B828BACED500E8970F /* Color+.swift in Sources */,
@@ -247,6 +257,8 @@
 				9CA4B8C528B8240D00B7A043 /* AppleMusicSwiftUIApp.swift in Sources */,
 				9C4FE7C928BAE22800E8970F /* LibraryModel.swift in Sources */,
 				9C4FE7C128BAE02C00E8970F /* TabViewIcons.swift in Sources */,
+				9C047A3D28C128C90047F514 /* GenresView.swift in Sources */,
+				9C047A3B28C128570047F514 /* StationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
