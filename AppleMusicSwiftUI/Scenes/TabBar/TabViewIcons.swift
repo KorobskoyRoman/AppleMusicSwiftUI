@@ -21,7 +21,7 @@ struct TabViewIcons: View {
                     Text("Медиатека")
                 }
                 NavigationView {
-                    Text("")
+                    RadioView()
                         .navigationTitle("Радио")
                 }
                 .tabItem {
@@ -39,7 +39,6 @@ struct TabViewIcons: View {
             }
             .ignoresSafeArea(edges: .bottom)
             .accentColor(.red)
-            .padding(.horizontal)
 
             MiniPlayerView()
                 .padding(.bottom, 50)
