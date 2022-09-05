@@ -12,7 +12,6 @@ struct GenresView: View {
     private let contentRows = [GridItem(.fixed(200))]
 
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: contentRows) {
                 ForEach(0..<genres.count, id: \.self) { genre in
                     VStack {
@@ -35,7 +34,6 @@ struct GenresView: View {
                     }
                 }
             }
-        }
     }
 }
 

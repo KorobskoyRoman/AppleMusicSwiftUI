@@ -13,7 +13,6 @@ struct StationView: View {
     
     var body: some View {
         LazyVGrid(columns: stationsColumns) {
-            Divider()
             VStack(alignment: .leading) {
                 Text("Станции")
                     .font(.title2.weight(.bold))
@@ -41,6 +40,7 @@ struct StationView: View {
                 }
             }
         }
+        .padding(.horizontal)
     }
 }
 

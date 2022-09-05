@@ -10,7 +10,12 @@ import SwiftUI
 struct RadioView: View {
     var body: some View {
         ScrollView(.vertical) {
-            GenresView()
+            ScrollView(.horizontal, showsIndicators: false) {
+                GenresView()
+            }.padding(.horizontal)
+            
+            Divider()
+                .padding()
 
             StationView()
                 .padding()
