@@ -15,6 +15,7 @@ struct TabViewIcons: View {
                 NavigationView {
                     LibraryView()
                         .navigationTitle("Медиатека")
+                        .padding(.bottom, 80)
                 }
                 .tabItem {
                     Image(systemName: "rectangle.stack.badge.play.fill")
@@ -23,14 +24,16 @@ struct TabViewIcons: View {
                 NavigationView {
                     RadioView()
                         .navigationTitle("Радио")
+                        .padding(.bottom, 80)
                 }
                 .tabItem {
                     Image(systemName: "dot.radiowaves.left.and.right")
                     Text("Радио")
                 }
                 NavigationView {
-                    Text("")
+                    SearchView()
                         .navigationTitle("Поиск")
+                        .padding(.bottom, 80)
                 }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
@@ -39,9 +42,10 @@ struct TabViewIcons: View {
             }
             .ignoresSafeArea(edges: .bottom)
             .accentColor(.red)
-
+            Divider()
+                .padding(.bottom,48)
             MiniPlayerView()
-                .padding(.bottom, 50)
+                .padding(.bottom, 49)
         }
     }
 }
