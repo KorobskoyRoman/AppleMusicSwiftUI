@@ -14,40 +14,47 @@ struct SearchView: View {
     private let cornerRadius: CGFloat = 15
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Text("Поиск по категориям")
-                    .font(.title2.weight(.bold))
-                    .multilineTextAlignment(.leading)
-                    .padding()
+        VStack(alignment: .leading) {
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text("Поиск по категориям")
+                        .font(.title2.weight(.bold))
+                        .multilineTextAlignment(.leading)
+                        .padding()
 
-                Divider()
+                    Divider()
+                }
 
                 LazyVGrid(columns: categoriesColumns, spacing: 10) {
                     ForEach(0..<$categories.count, id: \.self) { category in
                         NavigationLink(destination: SearchDetailView(title: $categories[category].title)) {
-                        ZStack(alignment: .bottomLeading) {
-
-                                Image(categories[category].image)
-                                    .resizable(resizingMode: .stretch)
-                                    .scaledToFill()
-                                    .frame(width: 200, height: 150, alignment: .leading)
-                                    .cornerRadius(cornerRadius)
-                                Rectangle()
-                                    .foregroundColor(.clear)
-                                    .background(LinearGradient(
-                                        gradient: Gradient(
-                                            colors: [.pink, .yellow, .purple, .orange]),
-                                        startPoint: .trailing, endPoint: .leading))
-                                    .opacity(0.4)
-                                    .cornerRadius(cornerRadius)
-                                Text(categories[category].title)
-                                    .padding()
-                                    .font(.title3.weight(.bold))
-                                    .multilineTextAlignment(.leading)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(cornerRadius)
-                            }
+                            Image(categories[category].image)
+                                .resizable(resizingMode: .stretch)
+                                .scaledToFill()
+                                .frame(width: 200, height: 150, alignment: .leading)
+                                .cornerRadius(cornerRadius)
+                                .overlay(
+                                    Rectangle()
+                                        .foregroundColor(.clear)
+                                        .background(LinearGradient(
+                                            gradient: Gradient(
+                                                colors: [.pink, .yellow, .purple, .orange]),
+                                            startPoint: .trailing, endPoint: .leading))
+                                        .opacity(0.4)
+                                        .cornerRadius(cornerRadius)
+                                )
+                                .overlay(
+                                    VStack(alignment: .leading) {
+                                        HStack { Spacer() }
+                                        Spacer()
+                                        Text(categories[category].title)
+                                            .padding()
+                                            .font(.title3.weight(.bold))
+                                            .multilineTextAlignment(.leading)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(cornerRadius)
+                                    }
+                                )
                         }
                         .frame(width: 200, height: 110)
                         .padding(25)
