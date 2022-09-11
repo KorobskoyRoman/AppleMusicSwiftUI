@@ -45,7 +45,7 @@ struct SearchDetailView: View {
                 }
             }
         }
-        .padding(.bottom, 85)
+        .padding(.bottom, 80)
     }
 
     private func makeInsetTitle(title: String, hasButton: Bool) -> some View {
