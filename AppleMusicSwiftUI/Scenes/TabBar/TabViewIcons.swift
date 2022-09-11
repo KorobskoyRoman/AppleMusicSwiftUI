@@ -42,10 +42,13 @@ struct TabViewIcons: View {
             }
             .ignoresSafeArea(edges: .bottom)
             .accentColor(.red)
-            Divider()
-                .padding(.bottom,48)
-            MiniPlayerView()
-                .padding(.bottom, 49)
+            .overlay(
+                VStack {
+                    Spacer()
+                    MiniPlayerView()
+                        .padding(.bottom, 49)
+                }
+            )
         }
     }
 }
