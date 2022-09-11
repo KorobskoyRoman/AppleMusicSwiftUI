@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabViewIcons: View {
+    @State var expand = false
+    @Namespace var animation
+
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             Divider()
@@ -42,14 +45,10 @@ struct TabViewIcons: View {
             }
             .ignoresSafeArea(edges: .bottom)
             .accentColor(.red)
-            .overlay(
-                VStack {
-                    Spacer()
-                    MiniPlayerView()
-                        .padding(.bottom, 49)
-                }
-            )
+
+            MiniPlayerView(expand: $expand, animation: animation)
         }
+        .background(BlurView())
     }
 }
 
