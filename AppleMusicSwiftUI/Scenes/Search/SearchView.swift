@@ -10,6 +10,8 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText = ""
     @State private var categories = CreateSearchModel.createSearchModel()
+    @State private var filteredCategories = CreateSearchModel.createSearchModel()
+//    @ObservedObject private var categories = CreateSearchModel.createSearchModel()
     private let categoriesColumns = [GridItem(.fixed(200)), GridItem(.fixed(200))]
     private let cornerRadius: CGFloat = 15
 
@@ -63,7 +65,35 @@ struct SearchView: View {
                     }
                 }
             }
-            .searchable(text: $searchText, prompt: "Ваша Медиатека")
+            .searchable(text: $searchText, prompt: "Ваша Медиатека")  {
+                let randomElements = [
+                    categories.randomElement()?.title,
+                    categories.randomElement()?.title,
+                    categories.randomElement()?.title,
+                    categories.randomElement()?.title
+                ]
+
+                ForEach(randomElements, id: \.self) { element in
+                    Text(element ?? "")
+                        .searchCompletion(element ?? "")
+                }
+            }
+            .onSubmit(of: .search) {
+                filterCategories()
+            }
+            .onChange(of: searchText) { _ in
+                filterCategories()
+            }
+        }
+    }
+
+    private func filterCategories() {
+        if searchText.isEmpty {
+            categories = CreateSearchModel.createSearchModel()
+        } else {
+            categories = categories.filter {
+                $0.title.localizedStandardContains(searchText)
+            }
         }
     }
 }
