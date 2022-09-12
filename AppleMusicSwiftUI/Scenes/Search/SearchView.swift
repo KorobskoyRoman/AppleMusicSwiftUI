@@ -10,7 +10,8 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText = ""
     @ObservedObject var viewModel: SearchViewModel
-    private let categoriesColumns = [GridItem(.fixed(200)), GridItem(.fixed(200))]
+    private let categoriesColumns = [GridItem(.flexible(minimum: 100, maximum: UIScreen.main.bounds.width / 2 - 10)),
+                                     GridItem(.flexible(minimum: 100, maximum: UIScreen.main.bounds.width / 2 - 10))]
     private let cornerRadius: CGFloat = 15
 
     var body: some View {
@@ -30,9 +31,9 @@ struct SearchView: View {
                         NavigationLink(destination: SearchDetailView(title: $viewModel.categories[category].title)) {
                             Image(viewModel.categories[category].image)
                                 .resizable(resizingMode: .stretch)
-                                .scaledToFill()
-                                .frame(width: 200, height: 150, alignment: .leading)
+                                .frame(width: UIScreen.main.bounds.width / 2 - 10, height: 150)
                                 .cornerRadius(cornerRadius)
+                                .aspectRatio(1.0, contentMode: .fit)
                                 .overlay(
                                     Rectangle()
                                         .foregroundColor(.clear)
@@ -96,8 +97,8 @@ struct SearchView: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView(viewModel: SearchViewModel())
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView(viewModel: SearchViewModel()).
+//    }
+//}
