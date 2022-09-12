@@ -39,6 +39,7 @@ struct StationView: View {
                     .padding(.bottom)
                 }
             }
+            .padding(.horizontal)
         }
     }
 }
