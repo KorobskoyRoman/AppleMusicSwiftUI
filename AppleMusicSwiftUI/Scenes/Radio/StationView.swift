@@ -40,7 +40,6 @@ struct StationView: View {
                 }
             }
         }
-        .padding(.horizontal)
     }
 }
 

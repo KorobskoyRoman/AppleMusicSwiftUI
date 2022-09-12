@@ -12,15 +12,13 @@ struct RadioView: View {
         ScrollView(.vertical) {
             ScrollView(.horizontal, showsIndicators: false) {
                 GenresView()
-            }.padding(.horizontal)
-            
+            }
+
             Divider()
                 .padding()
 
             StationView()
-                .padding()
         }
-        .padding(.bottom)
     }
 }
 

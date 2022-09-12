@@ -18,7 +18,9 @@ struct LibraryView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        isEditing.toggle()
+                        withAnimation {
+                            isEditing.toggle()
+                        }
                     }, label: {
                         Text(isEditing ? "Готово" : "Править")
                             .foregroundColor(.red)

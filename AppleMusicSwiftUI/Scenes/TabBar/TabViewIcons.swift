@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabViewIcons: View {
+    @State var expand = false
+    @Namespace var animation
+
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             Divider()
@@ -15,6 +18,7 @@ struct TabViewIcons: View {
                 NavigationView {
                     LibraryView()
                         .navigationTitle("Медиатека")
+                        .padding(.bottom, 80)
                 }
                 .tabItem {
                     Image(systemName: "rectangle.stack.badge.play.fill")
@@ -23,14 +27,16 @@ struct TabViewIcons: View {
                 NavigationView {
                     RadioView()
                         .navigationTitle("Радио")
+                        .padding(.bottom, 80)
                 }
                 .tabItem {
                     Image(systemName: "dot.radiowaves.left.and.right")
                     Text("Радио")
                 }
                 NavigationView {
-                    Text("")
+                    SearchView(viewModel: SearchViewModel())
                         .navigationTitle("Поиск")
+                        .padding(.bottom, 80)
                 }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
@@ -40,9 +46,9 @@ struct TabViewIcons: View {
             .ignoresSafeArea(edges: .bottom)
             .accentColor(.red)
 
-            MiniPlayerView()
-                .padding(.bottom, 50)
+            MiniPlayerView(expand: $expand, animation: animation)
         }
+        .background(BlurView())
     }
 }
 
