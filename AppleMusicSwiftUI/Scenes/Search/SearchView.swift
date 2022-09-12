@@ -9,9 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
-    @State private var categories = CreateSearchModel.createSearchModel()
-    @State private var filteredCategories = CreateSearchModel.createSearchModel()
-//    @ObservedObject private var categories = CreateSearchModel.createSearchModel()
+    @ObservedObject var viewModel: SearchViewModel
     private let categoriesColumns = [GridItem(.fixed(200)), GridItem(.fixed(200))]
     private let cornerRadius: CGFloat = 15
 
@@ -28,9 +26,9 @@ struct SearchView: View {
                 }
 
                 LazyVGrid(columns: categoriesColumns, spacing: 10) {
-                    ForEach(0..<$categories.count, id: \.self) { category in
-                        NavigationLink(destination: SearchDetailView(title: $categories[category].title)) {
-                            Image(categories[category].image)
+                    ForEach(0..<viewModel.categories.count, id: \.self) { category in
+                        NavigationLink(destination: SearchDetailView(title: $viewModel.categories[category].title)) {
+                            Image(viewModel.categories[category].image)
                                 .resizable(resizingMode: .stretch)
                                 .scaledToFill()
                                 .frame(width: 200, height: 150, alignment: .leading)
@@ -49,7 +47,7 @@ struct SearchView: View {
                                     VStack(alignment: .leading) {
                                         HStack { Spacer() }
                                         Spacer()
-                                        Text(categories[category].title)
+                                        Text(viewModel.categories[category].title)
                                             .padding()
                                             .font(.title3.weight(.bold))
                                             .multilineTextAlignment(.leading)
@@ -67,10 +65,10 @@ struct SearchView: View {
             }
             .searchable(text: $searchText, prompt: "Ваша Медиатека")  {
                 let randomElements = [
-                    categories.randomElement()?.title,
-                    categories.randomElement()?.title,
-                    categories.randomElement()?.title,
-                    categories.randomElement()?.title
+                    viewModel.categories.randomElement()?.title,
+                    viewModel.categories.randomElement()?.title,
+                    viewModel.categories.randomElement()?.title,
+                    viewModel.categories.randomElement()?.title
                 ]
 
                 ForEach(randomElements, id: \.self) { element in
@@ -89,9 +87,9 @@ struct SearchView: View {
 
     private func filterCategories() {
         if searchText.isEmpty {
-            categories = CreateSearchModel.createSearchModel()
+            viewModel.categories = CreateSearchModel.createSearchModel()
         } else {
-            categories = categories.filter {
+            viewModel.categories = viewModel.categories.filter {
                 $0.title.localizedStandardContains(searchText)
             }
         }
@@ -100,6 +98,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(viewModel: SearchViewModel())
     }
 }

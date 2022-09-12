@@ -20,7 +20,21 @@ struct SearchCell: Hashable {
     var image: String
 }
 
-class CreateSearchModel {
+final class SearchViewModel: ObservableObject {
+    @Published var categories = [SearchModel]()
+    @Published var cellInfo = [[SearchCell]]()
+
+    init() {
+        updateModel()
+    }
+
+    private func updateModel() {
+        self.categories = CreateSearchModel.createSearchModel()
+        self.cellInfo = CreateSearchModel.createDetailSearchModel()
+    }
+}
+
+final class CreateSearchModel {
     static func createSearchModel() -> [SearchModel] {
         return [
             SearchModel(image: "s1", title: "Главное"),
