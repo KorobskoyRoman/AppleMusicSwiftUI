@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchViewRepresentable: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
-        return SearchViewController()
+        return UINavigationController(rootViewController: SearchViewController())
     }
 
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
