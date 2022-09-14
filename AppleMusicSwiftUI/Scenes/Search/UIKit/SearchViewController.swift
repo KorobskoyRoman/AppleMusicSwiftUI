@@ -15,11 +15,14 @@ final class SearchViewController: UIViewController {
 
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositialLayout())
     private lazy var dataSource = createDiffableDataSource()
-    private let categories = CreateSearchModel.createSearchModel()
+    private var categories = CreateSearchModel.createSearchModel()
+    private let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Поиск"
         setupCollectionView()
+        setupSearchBar()
         applySnapshot()
     }
 
@@ -30,6 +33,18 @@ final class SearchViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.register(SearchViewCell.self, forCellWithReuseIdentifier: SearchViewCell.reuseId)
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
+    }
+
+    private func setupSearchBar() {
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
+
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -99,8 +114,7 @@ extension SearchViewController {
             guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("can't create new section header")}
             guard let section = Section(rawValue: indexPath.section) else { fatalError("No section kind") }
             sectionHeader.configurate(text: section.description(),
-                                      font: UIFont(name: "Al Bayan Bold",
-                                                   size: 36),
+                                      font: UIFont.systemFont(ofSize: 26, weight: .bold),
                                       textColor: .black)
 
             return sectionHeader
@@ -115,6 +129,28 @@ extension SearchViewController {
         snapshot.appendSections([.mainSection])
         snapshot.appendItems(categories, toSection: .mainSection)
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        categories = categories.filter { $0.title.contains(searchText) }
+        if searchText.isEmpty {
+            categories = CreateSearchModel.createSearchModel()
+        }
+        applySnapshot()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if categories.count != CreateSearchModel.createSearchModel().count {
+            categories = CreateSearchModel.createSearchModel()
+            applySnapshot()
+        }
     }
 }
 
