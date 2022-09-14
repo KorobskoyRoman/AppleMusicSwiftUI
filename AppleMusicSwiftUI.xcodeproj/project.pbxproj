@@ -20,6 +20,11 @@
 		9C53E22728CE2A0B0035951C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53E22628CE2A0B0035951C /* BlurView.swift */; };
 		9C7381C728C0063900A98DC2 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7381C628C0063900A98DC2 /* RadioView.swift */; };
 		9C7381CA28C009F400A98DC2 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7381C928C009F400A98DC2 /* RadioModel.swift */; };
+		9C7A32B828D254C0009A5D39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A32B728D254C0009A5D39 /* SearchViewController.swift */; };
+		9C7A32BA28D254EF009A5D39 /* SearchViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A32B928D254EF009A5D39 /* SearchViewRepresentable.swift */; };
+		9C7A32BC28D25872009A5D39 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A32BB28D25872009A5D39 /* SectionModel.swift */; };
+		9C7A32C028D25B5B009A5D39 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A32BF28D25B5B009A5D39 /* SearchViewCell.swift */; };
+		9C7A32C228D25D18009A5D39 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A32C128D25D18009A5D39 /* SectionHeader.swift */; };
 		9CA4B8C528B8240D00B7A043 /* AppleMusicSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4B8C428B8240D00B7A043 /* AppleMusicSwiftUIApp.swift */; };
 		9CA4B8C728B8240D00B7A043 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4B8C628B8240D00B7A043 /* ContentView.swift */; };
 		9CA4B8C928B8241000B7A043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4B8C828B8241000B7A043 /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 		9C53E22628CE2A0B0035951C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		9C7381C628C0063900A98DC2 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		9C7381C928C009F400A98DC2 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
+		9C7A32B728D254C0009A5D39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9C7A32B928D254EF009A5D39 /* SearchViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewRepresentable.swift; sourceTree = "<group>"; };
+		9C7A32BB28D25872009A5D39 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		9C7A32BF28D25B5B009A5D39 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		9C7A32C128D25D18009A5D39 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		9CA4B8C128B8240D00B7A043 /* AppleMusicSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA4B8C428B8240D00B7A043 /* AppleMusicSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSwiftUIApp.swift; sourceTree = "<group>"; };
 		9CA4B8C628B8240D00B7A043 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				9CE54F2428CB96FF00626008 /* Model */,
+				9C7A32B628D254A3009A5D39 /* UIKit */,
 				9CE54F2228CA9DAB00626008 /* SearchView.swift */,
 				9CE54F2728CBBA4400626008 /* SearchDetailView.swift */,
 			);
@@ -157,6 +168,34 @@
 				9C047A3828C10B9B0047F514 /* RadioStations.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9C7A32B628D254A3009A5D39 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A32BD28D2588F009A5D39 /* Model */,
+				9C7A32BE28D25B51009A5D39 /* View */,
+				9C7A32B728D254C0009A5D39 /* SearchViewController.swift */,
+				9C7A32B928D254EF009A5D39 /* SearchViewRepresentable.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9C7A32BD28D2588F009A5D39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A32BB28D25872009A5D39 /* SectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C7A32BE28D25B51009A5D39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A32BF28D25B5B009A5D39 /* SearchViewCell.swift */,
+				9C7A32C128D25D18009A5D39 /* SectionHeader.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9CA4B8B828B8240D00B7A043 = {
@@ -274,9 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4FE7C428BAE09700E8970F /* LibraryView.swift in Sources */,
+				9C7A32C028D25B5B009A5D39 /* SearchViewCell.swift in Sources */,
 				9C4FE7BA28BAD32A00E8970F /* MainLibraryView.swift in Sources */,
 				9C047A3928C10B9B0047F514 /* RadioStations.swift in Sources */,
+				9C7A32C228D25D18009A5D39 /* SectionHeader.swift in Sources */,
 				9CE54F2628CB970B00626008 /* SearchModel.swift in Sources */,
+				9C7A32B828D254C0009A5D39 /* SearchViewController.swift in Sources */,
+				9C7A32BC28D25872009A5D39 /* SectionModel.swift in Sources */,
 				9C7381CA28C009F400A98DC2 /* RadioModel.swift in Sources */,
 				9C53E22728CE2A0B0035951C /* BlurView.swift in Sources */,
 				9CE54F2828CBBA4400626008 /* SearchDetailView.swift in Sources */,
@@ -285,6 +328,7 @@
 				9C7381C728C0063900A98DC2 /* RadioView.swift in Sources */,
 				9C4FE7C628BAE0BB00E8970F /* MiniPlayerView.swift in Sources */,
 				9C4FE7B628BABE4000E8970F /* LibraryListView.swift in Sources */,
+				9C7A32BA28D254EF009A5D39 /* SearchViewRepresentable.swift in Sources */,
 				9CA4B8C528B8240D00B7A043 /* AppleMusicSwiftUIApp.swift in Sources */,
 				9CE54F2328CA9DAC00626008 /* SearchView.swift in Sources */,
 				9C4FE7C928BAE22800E8970F /* LibraryModel.swift in Sources */,

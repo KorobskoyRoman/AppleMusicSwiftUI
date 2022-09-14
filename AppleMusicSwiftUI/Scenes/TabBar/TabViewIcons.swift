@@ -34,7 +34,8 @@ struct TabViewIcons: View {
                     Text("Радио")
                 }
                 NavigationView {
-                    SearchView(viewModel: SearchViewModel())
+//                    SearchView(viewModel: SearchViewModel())
+                    SearchViewRepresentable()
                         .navigationTitle("Поиск")
                         .padding(.bottom, 80)
                 }
