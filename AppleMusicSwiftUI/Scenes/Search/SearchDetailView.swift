@@ -36,7 +36,6 @@ struct SearchDetailView: View {
                     NewDetailCategories(rows: rows, categories: categories[2])
                 }
 
-                Divider()
                 makeInsetTitle(title: "Лучшие новые треки", hasButton: true)
 
                 ScrollView(.horizontal, showsIndicators: false) {
