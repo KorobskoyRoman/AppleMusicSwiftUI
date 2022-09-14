@@ -58,9 +58,11 @@ struct SearchDetailView: View {
                     .padding(.horizontal)
 
                 if hasButton {
+                    Spacer()
                     Button("См. все") {
                         print(#function)
                     }
+                    .padding()
                     .foregroundColor(.red)
                 }
             }
