@@ -36,7 +36,6 @@ struct SearchDetailView: View {
                     NewDetailCategories(rows: rows, categories: categories[2])
                 }
 
-                Divider()
                 makeInsetTitle(title: "Лучшие новые треки", hasButton: true)
 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -59,9 +58,11 @@ struct SearchDetailView: View {
                     .padding(.horizontal)
 
                 if hasButton {
+                    Spacer()
                     Button("См. все") {
                         print(#function)
                     }
+                    .padding()
                     .foregroundColor(.red)
                 }
             }

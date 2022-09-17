@@ -33,11 +33,12 @@ struct TabViewIcons: View {
                     Image(systemName: "dot.radiowaves.left.and.right")
                     Text("Радио")
                 }
-                NavigationView {
-                    SearchView(viewModel: SearchViewModel())
+//                NavigationView {
+//                    SearchView(viewModel: SearchViewModel())
+                    SearchViewRepresentable()
                         .navigationTitle("Поиск")
                         .padding(.bottom, 80)
-                }
+//                }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Поиск")
