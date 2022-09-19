@@ -32,6 +32,7 @@
 		9CE54F2328CA9DAC00626008 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE54F2228CA9DAB00626008 /* SearchView.swift */; };
 		9CE54F2628CB970B00626008 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE54F2528CB970B00626008 /* SearchModel.swift */; };
 		9CE54F2828CBBA4400626008 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE54F2728CBBA4400626008 /* SearchDetailView.swift */; };
+		9CFFCED928D8F63D00B86875 /* SearchDetailHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFFCED828D8F63D00B86875 /* SearchDetailHostingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		9CE54F2228CA9DAB00626008 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9CE54F2528CB970B00626008 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		9CE54F2728CBBA4400626008 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		9CFFCED828D8F63D00B86875 /* SearchDetailHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailHostingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				9CE54F2428CB96FF00626008 /* Model */,
 				9C7A32B628D254A3009A5D39 /* UIKit */,
+				9CFFCED728D8F61F00B86875 /* SwiftUI */,
 				9CE54F2228CA9DAB00626008 /* SearchView.swift */,
 				9CE54F2728CBBA4400626008 /* SearchDetailView.swift */,
 			);
@@ -242,6 +245,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9CFFCED728D8F61F00B86875 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				9CFFCED828D8F63D00B86875 /* SearchDetailHostingController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,6 +338,7 @@
 				9C4FE7B828BACED500E8970F /* Color+.swift in Sources */,
 				9C7381C728C0063900A98DC2 /* RadioView.swift in Sources */,
 				9C4FE7C628BAE0BB00E8970F /* MiniPlayerView.swift in Sources */,
+				9CFFCED928D8F63D00B86875 /* SearchDetailHostingController.swift in Sources */,
 				9C4FE7B628BABE4000E8970F /* LibraryListView.swift in Sources */,
 				9C7A32BA28D254EF009A5D39 /* SearchViewRepresentable.swift in Sources */,
 				9CA4B8C528B8240D00B7A043 /* AppleMusicSwiftUIApp.swift in Sources */,
